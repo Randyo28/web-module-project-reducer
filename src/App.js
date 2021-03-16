@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
 import reducer,{ initialState } from './reducers';
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY } from './/actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, M_CLEAR, M_PLUS, M_R } from './/actions';
 
 function App() {
 
@@ -29,9 +29,15 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"}
+                onClick={() => dispatch({type: M_PLUS})}
+              />
+              <CalcButton value={"MR"}
+                onClick={() => dispatch({type: M_R})}
+              />
+              <CalcButton value={"MC"}
+                onClick={() => dispatch({type: M_CLEAR})}
+              />
             </div>
 
             <div className="row">
